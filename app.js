@@ -1,7 +1,7 @@
 const env = require('dotenv');
+const port = process.env.PORT || 5000;
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 5000;
 var cookieParser = require('cookie-parser');
 env.config({path: './config.env'});
 app.use(cookieParser());
@@ -14,6 +14,6 @@ app.use(express.json()); // middleware
 app.use(require('./router/auth')); 
 
  
-app.listen(PORT, ()=>{
-    console.log(`Working at port ${PORT}`);
+app.listen(port, ()=>{
+    console.log(`Working at port ${port}`);
 })
